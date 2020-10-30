@@ -14,10 +14,9 @@ export class ShowdownComponent implements OnInit {
   constructor(private armyService: ArmyService, private calculationService: CalculationService,
     private extraService: ExtraService) { }
 
-  public army: ArmyModel = { Tiers: [], MassiveMarch: false };
-  public activeIds: Array<string> = [];
-  public showWarning = false;
-  public warningInfo = "";
+    public army: ArmyModel = { Tiers: [], MassiveMarch: false };
+    public showWarning = false;
+    public warningInfo = "";
 
   ngOnInit(): void {
     this.calculate();
@@ -33,16 +32,5 @@ export class ShowdownComponent implements OnInit {
       this.showWarning = true;
       this.warningInfo = `Troops missing: ${marchSize - total} Formation: ${total}/${marchSize}`
     }
-    this.calculateActive();
   }
-
-  private calculateActive() {
-    for (let i = 0; i < this.army.Tiers.length; i++) {
-      let t = this.army.Tiers[i];
-      if (t.Infantry > 0 || t.Rider > 0 || t.Hunter > 0) {
-        this.activeIds.push('static-' + t.Level);
-      }
-    }
-  }
-
 }

@@ -33,16 +33,5 @@ export class TrapComponent implements OnInit {
       this.showWarning = true;
       this.warningInfo = `Troops missing: ${marchSize - total} Formation: ${total}/${marchSize}`
     }
-    this.calculateActive();
   }
-
-  private calculateActive() {
-    for (let i = 0; i < this.army.Tiers.length; i++) {
-      let t = this.army.Tiers[i];
-      if (t.Infantry > 0 || t.Rider > 0 || t.Hunter > 0) {
-        this.activeIds.push(t.Level.toString());
-      }
-    }
-  }
-
 }

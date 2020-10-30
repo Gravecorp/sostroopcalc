@@ -16,6 +16,7 @@ import { StorageService } from 'src/services/storage.service';
 import { CapitalComponent } from './capital/capital.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { GenericCalcComponent } from './generic-calc/generic-calc.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { environment } from '../environments/environment';
     ShowdownComponent,
     HeaderComponent,
     ExtraComponent,
-    CapitalComponent
+    CapitalComponent,
+    GenericCalcComponent
   ],
   imports: [
     BrowserModule,
