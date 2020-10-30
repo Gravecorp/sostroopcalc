@@ -1,0 +1,154 @@
+<ngb-accordion [closeOthers]="true" activeIds="static-1">
+    <ngb-panel id="static-1">
+        <ng-template ngbPanelTitle>
+            <span>Trap Ratios</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div class="form-row">
+                <label for="Infantry_trap" class="control-label col-sm-2">Infantry</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" step="0.01" id="Infantry_trap" [(ngModel)]="trap.Infantry"
+                        (change)="save()" />
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="Riders_trap" class="control-label col-sm-2">Riders</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" step="0.01" id="Riders_trap" [(ngModel)]="trap.Rider"
+                        (change)="save()" />
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="Hunters_trap" class="control-label col-sm-2">Hunters</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" step="0.01" id="Hunters_trap" [(ngModel)]="trap.Hunter"
+                        (change)="save()" />
+                </div>
+            </div>
+            <div class="form-row">
+                <button type="button" class="btn btn-outline-secondary btn-lg btn-block" (click)="trapDefault()">Restore
+                    Default</button>
+            </div>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-2">
+        <ng-template ngbPanelTitle>
+            <span>Showdown Ratios</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div class="form-row">
+                <label for="Infantry_showdown" class="control-label col-sm-2">Infantry</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" step="0.01" id="Infantry_showdown"
+                        [(ngModel)]="showdown.Infantry" (change)="save()" />
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="Riders_showdown" class="control-label col-sm-2">Riders</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" step="0.01" id="Riders_showdown"
+                        [(ngModel)]="showdown.Rider" (change)="save()" />
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="Hunters_showdown" class="control-label col-sm-2">Hunters</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" step="0.01" id="Hunters_showdown"
+                        [(ngModel)]="showdown.Hunter" (change)="save()" />
+                </div>
+            </div>
+            <div class="form-row">
+                <button type="button" class="btn btn-outline-secondary btn-lg btn-block"
+                    (click)="showdownDefault()">Restore Default</button>
+            </div>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-3">
+        <ng-template ngbPanelTitle>
+            <span>Capital Ratios</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div class="form-row">
+                <label for="Infantry_capital" class="control-label col-sm-2">Infantry</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" step="0.01" id="Infantry_capital"
+                        [(ngModel)]="capital.Infantry" (change)="save()" />
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="Riders_capital" class="control-label col-sm-2">Riders</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" step="0.01" id="Riders_capital"
+                        [(ngModel)]="capital.Rider" (change)="save()" />
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="Hunters_capital" class="control-label col-sm-2">Hunters</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" step="0.01" id="Hunters_capital"
+                        [(ngModel)]="capital.Hunter" (change)="save()" />
+                </div>
+            </div>
+            <div class="form-row">
+                <button type="button" class="btn btn-outline-secondary btn-lg btn-block"
+                    (click)="capitalDefault()">Restore Default</button>
+            </div>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-4">
+        <ng-template ngbPanelTitle>
+            <span>Export Army</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div class="form-group">
+                <label for="comment">Army:</label>
+                <textarea class="form-control" rows="5" id="comment" [value]="armyExport"></textarea>
+            </div>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-5">
+        <ng-template ngbPanelTitle>
+            <span>Import Army</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div class="form-group">
+                <label for="importData">Army:</label>
+                <textarea class="form-control" rows="5" id="importData" [(ngModel)]="importString"></textarea>
+            </div>
+            <div class="form-row">
+                <button type="button" class="btn btn-outline-secondary btn-lg btn-block"
+                    (click)="importArmy()">Import</button>
+            </div>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-6">
+        <ng-template ngbPanelTitle>
+            <span>Import old Calc</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div class="form-group">
+                <label for="importbook">Bookmark Url:</label>
+                <textarea class="form-control" rows="5" id="importbook" [(ngModel)]="bookmarkString"></textarea>
+            </div>
+            <div class="form-row">
+                <button type="button" class="btn btn-outline-secondary btn-lg btn-block"
+                    (click)="importBookmark()">Import</button>
+            </div>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-7">
+        <ng-template ngbPanelTitle>
+            <span>Reset Army</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+            <div class="form-group">
+                <div class="warning">This will delete your army!</div>
+            </div>
+            <div class="form-row">
+                <button type="button" class="btn btn-outline-danger btn-lg btn-block"
+                    (click)="resetArmy()">Delete</button>
+            </div>
+        </ng-template>
+    </ngb-panel>
+
+</ngb-accordion>
