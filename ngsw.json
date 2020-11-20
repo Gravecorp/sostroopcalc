@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1605880305238,
+  "timestamp": 1605881723311,
   "index": "/sostroopcalc/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/sostroopcalc/favicon.ico",
         "/sostroopcalc/index.html",
-        "/sostroopcalc/main.c25ff21e834d39958acd.js",
+        "/sostroopcalc/main.8826897ace3155243bbe.js",
         "/sostroopcalc/manifest.webmanifest",
         "/sostroopcalc/polyfills.5c8033dfb7c3b4aa1601.js",
         "/sostroopcalc/runtime.ce186866ebbaf008d4d5.js",
@@ -52,8 +52,8 @@
     "/sostroopcalc/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/sostroopcalc/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/sostroopcalc/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/sostroopcalc/index.html": "b472df458338e8329c4301a1545d6f085b50015c",
-    "/sostroopcalc/main.c25ff21e834d39958acd.js": "fa63d72dccd739d96cb9125ad3f16308da7116b3",
+    "/sostroopcalc/index.html": "1aaae75e3ad67e1a74bd280516932fea7928f725",
+    "/sostroopcalc/main.8826897ace3155243bbe.js": "861af83d5af2c71e883f8530502b5dada8230993",
     "/sostroopcalc/manifest.webmanifest": "8da6a2cab7aa488fdfac116622f8458d33c6c23e",
     "/sostroopcalc/polyfills.5c8033dfb7c3b4aa1601.js": "dbc502f030c7bb83c7caa1feee7aff990831f7d9",
     "/sostroopcalc/runtime.ce186866ebbaf008d4d5.js": "12497b431819711d548ed69c9fdfcbf0c70fb2a9",
