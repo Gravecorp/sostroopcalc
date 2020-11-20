@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1604077829400,
-  "index": "/sostroopcalc/index.html",
+  "timestamp": 1605879882179,
+  "index": "C:/Program Files/Git/sostroopcalc/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "/sostroopcalc/favicon.ico",
-        "/sostroopcalc/index.html",
-        "/sostroopcalc/main.f6b27006910dcd5a6f5c.js",
-        "/sostroopcalc/manifest.webmanifest",
-        "/sostroopcalc/polyfills.5c8033dfb7c3b4aa1601.js",
-        "/sostroopcalc/runtime.ce186866ebbaf008d4d5.js",
-        "/sostroopcalc/styles.dc198369187c7b740470.css"
+        "C:/Program Files/Git/sostroopcalc/favicon.ico",
+        "C:/Program Files/Git/sostroopcalc/index.html",
+        "C:/Program Files/Git/sostroopcalc/main.c25ff21e834d39958acd.js",
+        "C:/Program Files/Git/sostroopcalc/manifest.webmanifest",
+        "C:/Program Files/Git/sostroopcalc/polyfills.5c8033dfb7c3b4aa1601.js",
+        "C:/Program Files/Git/sostroopcalc/runtime.a5d9e1aeb65e0d9ad194.js",
+        "C:/Program Files/Git/sostroopcalc/styles.dc198369187c7b740470.css"
       ],
       "patterns": []
     },
@@ -29,35 +29,35 @@
         "ignoreVary": true
       },
       "urls": [
-        "/sostroopcalc/assets/icons/icon-128x128.png",
-        "/sostroopcalc/assets/icons/icon-144x144.png",
-        "/sostroopcalc/assets/icons/icon-152x152.png",
-        "/sostroopcalc/assets/icons/icon-192x192.png",
-        "/sostroopcalc/assets/icons/icon-384x384.png",
-        "/sostroopcalc/assets/icons/icon-512x512.png",
-        "/sostroopcalc/assets/icons/icon-72x72.png",
-        "/sostroopcalc/assets/icons/icon-96x96.png"
+        "C:/Program Files/Git/sostroopcalc/assets/icons/icon-128x128.png",
+        "C:/Program Files/Git/sostroopcalc/assets/icons/icon-144x144.png",
+        "C:/Program Files/Git/sostroopcalc/assets/icons/icon-152x152.png",
+        "C:/Program Files/Git/sostroopcalc/assets/icons/icon-192x192.png",
+        "C:/Program Files/Git/sostroopcalc/assets/icons/icon-384x384.png",
+        "C:/Program Files/Git/sostroopcalc/assets/icons/icon-512x512.png",
+        "C:/Program Files/Git/sostroopcalc/assets/icons/icon-72x72.png",
+        "C:/Program Files/Git/sostroopcalc/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/sostroopcalc/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "/sostroopcalc/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "/sostroopcalc/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "/sostroopcalc/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "/sostroopcalc/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/sostroopcalc/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/sostroopcalc/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "/sostroopcalc/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "/sostroopcalc/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/sostroopcalc/index.html": "e629eb563c99c3258994685466f22e1d630bf7cb",
-    "/sostroopcalc/main.f6b27006910dcd5a6f5c.js": "c96ad100ef772b57733c72af3772510f9ec0c2cf",
-    "/sostroopcalc/manifest.webmanifest": "8da6a2cab7aa488fdfac116622f8458d33c6c23e",
-    "/sostroopcalc/polyfills.5c8033dfb7c3b4aa1601.js": "dbc502f030c7bb83c7caa1feee7aff990831f7d9",
-    "/sostroopcalc/runtime.ce186866ebbaf008d4d5.js": "12497b431819711d548ed69c9fdfcbf0c70fb2a9",
-    "/sostroopcalc/styles.dc198369187c7b740470.css": "89ea4e87601da6978bd783190e6c9142616a7750"
+    "C:/Program Files/Git/sostroopcalc/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "C:/Program Files/Git/sostroopcalc/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "C:/Program Files/Git/sostroopcalc/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "C:/Program Files/Git/sostroopcalc/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "C:/Program Files/Git/sostroopcalc/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "C:/Program Files/Git/sostroopcalc/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "C:/Program Files/Git/sostroopcalc/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "C:/Program Files/Git/sostroopcalc/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "C:/Program Files/Git/sostroopcalc/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "C:/Program Files/Git/sostroopcalc/index.html": "9838c69bdd96e5e83493e760b497ae3277768959",
+    "C:/Program Files/Git/sostroopcalc/main.c25ff21e834d39958acd.js": "fa63d72dccd739d96cb9125ad3f16308da7116b3",
+    "C:/Program Files/Git/sostroopcalc/manifest.webmanifest": "8da6a2cab7aa488fdfac116622f8458d33c6c23e",
+    "C:/Program Files/Git/sostroopcalc/polyfills.5c8033dfb7c3b4aa1601.js": "dbc502f030c7bb83c7caa1feee7aff990831f7d9",
+    "C:/Program Files/Git/sostroopcalc/runtime.a5d9e1aeb65e0d9ad194.js": "ce57419765029b7e5e2f40cf754f89e9665d3231",
+    "C:/Program Files/Git/sostroopcalc/styles.dc198369187c7b740470.css": "89ea4e87601da6978bd783190e6c9142616a7750"
   },
   "navigationUrls": [
     {
