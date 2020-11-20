@@ -3,6 +3,8 @@ import { ArmyModel } from 'src/models/armymodel';
 import { ArmyService } from 'src/services/army.service';
 import { CalculationService } from 'src/services/calculation.service';
 import { ExtraService } from 'src/services/extra.service';
+import { CalculationModel } from '../../models/calculationmodel';
+import { CalculationResult } from '../../models/calculationresult';
 
 @Component({
   selector: 'app-showdown',
@@ -23,12 +25,12 @@ export class ShowdownComponent implements OnInit {
   }
 
   public calculate() {
-    let calcModel = this.extraService.getShowdownRatios();
-    let marchSize = this.armyService.LoadMarch();
-    let result = this.calculationService.calculate(calcModel, marchSize);
+    let calcModel: CalculationModel = this.extraService.getShowdownRatios();
+    let marchSize: number = this.armyService.LoadMarch();
+    let result: CalculationResult = this.calculationService.calculate(calcModel, marchSize);
     this.army = result.army;
-    let totalModel = this.armyService.total(this.army);
-    let total = totalModel.Hunter + totalModel.Infantry + totalModel.Rider;
+    let totalModel: CalculationModel = this.armyService.total(this.army);
+    let total: number = totalModel.Hunter + totalModel.Infantry + totalModel.Rider;
     if(this.army.MassiveMarch) {
       marchSize = Math.floor(marchSize * 1.10)
     }

@@ -18,7 +18,8 @@ export class CalculationService {
     {
       size = Math.floor(size * 1.10);
     }
-    let result = this.armyService.DefaultArmy();
+    let result: ArmyModel = this.armyService.DefaultArmy();
+    result.MassiveMarch = army.MassiveMarch;
     let infTotal = Math.floor(size * calcModel.Infantry);
     let riderTotal = Math.floor(size * calcModel.Rider);
     let hunterTotal = size - (infTotal + riderTotal);
