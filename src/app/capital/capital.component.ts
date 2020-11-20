@@ -16,7 +16,7 @@ export class CapitalComponent implements OnInit {
 
     public army: ArmyModel = { Tiers: [], MassiveMarch: false };
     public showWarning = false;
-    public warningInfo = "";
+    public warningInfo:Array<string> = [];
 
   ngOnInit(): void {
     this.calculate();
@@ -25,13 +25,28 @@ export class CapitalComponent implements OnInit {
   public calculate() {
     let calcModel = this.extraService.getCapitalRatios();
     let marchSize = this.armyService.LoadMarch();
-    this.army = this.calculationService.calculate(calcModel, marchSize);
+    let result = this.calculationService.calculate(calcModel, marchSize);
+    this.army = result.army;
     let totalModel = this.armyService.total(this.army);
     let total = totalModel.Hunter + totalModel.Infantry + totalModel.Rider;
+    if(this.army.MassiveMarch) {
+      marchSize = Math.floor(marchSize * 1.10)
+    }
+    if(result.totals.Infantry > totalModel.Infantry)
+    {
+      this.warningInfo.push(`Missing ${result.totals.Infantry - totalModel.Infantry} Infantry`);
+    }
+    if(result.totals.Rider > totalModel.Rider)
+    {
+      this.warningInfo.push(`Missing ${result.totals.Rider - totalModel.Rider} Riders`);
+    }
+    if(result.totals.Hunter > totalModel.Hunter)
+    {
+      this.warningInfo.push(`Missing ${result.totals.Hunter - totalModel.Hunter} Hunters`);
+    }
     if (total < marchSize) {
       this.showWarning = true;
-      this.warningInfo = `Troops missing: ${marchSize - total} Formation: ${total}/${marchSize}`
+      this.warningInfo.push(`Formation: ${total}/${marchSize}`);
     }
   }
-
 }

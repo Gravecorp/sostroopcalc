@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ArmyModel } from 'src/models/armymodel';
 import { CalculationModel } from 'src/models/calculationmodel';
+import { CalculationResult } from 'src/models/calculationresult';
 import { Tier } from 'src/models/tier';
 import { ArmyService } from './army.service';
 
@@ -21,6 +22,12 @@ export class CalculationService {
     let infTotal = Math.floor(size * calcModel.Infantry);
     let riderTotal = Math.floor(size * calcModel.Rider);
     let hunterTotal = size - (infTotal + riderTotal);
+    let totalResult: CalculationModel = {
+      Infantry: infTotal,
+      Rider: riderTotal,
+      Hunter: hunterTotal,
+      version: 0
+    }
     for (let i = 0; i < army.Tiers.length; i++) {
       let t = army.Tiers[i];
       if (t.Infantry > infTotal) {
@@ -48,6 +55,10 @@ export class CalculationService {
         hunterTotal = hunterTotal - t.Hunter
       }
     }
-    return (result)
+    let ret: CalculationResult = {
+      army: result,
+      totals: totalResult
+    }
+    return (ret)
   }
 }

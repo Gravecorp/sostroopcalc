@@ -9,7 +9,7 @@ import { ArmyModel } from 'src/models/armymodel';
 export class GenericCalcComponent implements OnInit {
   @Input() public army: ArmyModel= { Tiers: [], MassiveMarch: false };
   @Input() public showWarning = false;
-  @Input() public warningInfo = "";
+  @Input() public warningInfo:Array<string> = [];
   public activeIds: Array<string> = [];
   constructor() { }
 

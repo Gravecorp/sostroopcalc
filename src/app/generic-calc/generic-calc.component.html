@@ -1,6 +1,8 @@
 <div class="alert alert-danger" role="alert" *ngIf="showWarning">
-    You do not have enough troops to fill the formation!<br />
-    {{warningInfo}}
+    You do not have enough troops to fill the formation!
+    <span *ngFor="let w of warningInfo;">
+        <br />{{w}}
+    </span>
 </div>
 <ngb-accordion [closeOthers]="false" [activeIds]="activeIds">
       <ngb-panel  *ngFor="let t of army.Tiers; let i = index" id="{{t.Level}}">
