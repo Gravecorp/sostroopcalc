@@ -23,6 +23,11 @@ export class CalculationService {
     }
     let result = this.armyCalc(army, calcModel, size);
     let ret: Array<CalculationResult> = [result];
+    if (result.contains.Infantry < result.shouldContain.Infantry
+      || result.contains.Hunter < result.shouldContain.Hunter
+      || result.contains.Rider < result.shouldContain.Rider) {
+      return(ret);
+    }
     let run = true;
     let last = result;
     let count = 1;
