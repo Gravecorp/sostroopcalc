@@ -3,5 +3,7 @@ import { CalculationModel } from './calculationmodel';
 
 export interface CalculationResult {
     army: ArmyModel,
-    totals: CalculationModel
+    shouldContain: CalculationModel,
+    contains: CalculationModel,
+    show: boolean
 }

@@ -13,11 +13,49 @@ export class CalculationService {
   constructor(private armyService: ArmyService) { }
 
   calculate(calcModel: CalculationModel, size: number) {
+    return (this.calc2(calcModel, size)[0])
+  }
+
+  calc2(calcModel: CalculationModel, size: number) {
     let army = this.armyService.LoadArmy();
-    if(army.MassiveMarch)
-    {
+    if (army.MassiveMarch) {
       size = Math.floor(size * 1.10);
     }
+    let result = this.armyCalc(army, calcModel, size);
+    let ret: Array<CalculationResult> = [result];
+    let run = true;
+    let last = result;
+    let count = 1;
+    do {
+      //console.log(army);
+      let m = this.armyService.DefaultArmy(army.MassiveMarch);
+      for (let i = 0; i < last.army.Tiers.length; i++) {
+        let lastTier = last.army.Tiers[i];
+        let armyTier = army.Tiers[i];
+        let rHunters = armyTier.Hunter - lastTier.Hunter;
+        let rRider = armyTier.Rider - lastTier.Rider
+        let rInfantry = armyTier.Infantry - lastTier.Infantry;
+        m.Tiers[i].Hunter = rHunters;
+        m.Tiers[i].Rider = rRider;
+        m.Tiers[i].Infantry = rInfantry;
+      }
+      army = m;
+      let mResult = this.armyCalc(m, calcModel, size);
+      ret.push(mResult);
+      if (mResult.contains.Infantry < mResult.shouldContain.Infantry
+        || mResult.contains.Hunter < mResult.shouldContain.Hunter
+        || mResult.contains.Rider < mResult.shouldContain.Rider) {
+        run = false;
+      }
+
+      last = mResult;
+      count++;
+    } while (run && count < 6)
+
+    return ret;
+  }
+
+  private armyCalc(army: ArmyModel, calcModel: CalculationModel, size: number) {
     let result: ArmyModel = this.armyService.DefaultArmy();
     result.MassiveMarch = army.MassiveMarch;
     let infTotal = Math.floor(size * calcModel.Infantry);
@@ -58,7 +96,9 @@ export class CalculationService {
     }
     let ret: CalculationResult = {
       army: result,
-      totals: totalResult
+      shouldContain: totalResult,
+      contains: this.armyService.total(result),
+      show: true
     }
     return (ret)
   }

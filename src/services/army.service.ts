@@ -74,7 +74,7 @@ export class ArmyService {
     this.storage.SaveInt(this.RALLY_KEY, size);
   }
 
-  public DefaultArmy(): ArmyModel {
+  public DefaultArmy(massiveMarch: boolean = false): ArmyModel {
     var arr = Array<Tier>();
     for (var i = 10; i > 6; i--) {
       var t: Tier = {
@@ -88,7 +88,7 @@ export class ArmyService {
     }
     var ret: ArmyModel = {
       Tiers: arr,
-      MassiveMarch: false
+      MassiveMarch: massiveMarch
     }
     return (this.armySort(ret));
   }

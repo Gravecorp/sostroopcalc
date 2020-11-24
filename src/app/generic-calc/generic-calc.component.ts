@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ArmyModel } from 'src/models/armymodel';
+import { CalculationModel } from 'src/models/calculationmodel';
+import { CalculationResult } from 'src/models/calculationresult';
 
 @Component({
   selector: 'app-generic-calc',
@@ -7,22 +9,12 @@ import { ArmyModel } from 'src/models/armymodel';
   styleUrls: ['./generic-calc.component.scss']
 })
 export class GenericCalcComponent implements OnInit {
-  @Input() public army: ArmyModel= { Tiers: [], MassiveMarch: false };
-  @Input() public showWarning = false;
-  @Input() public warningInfo:Array<string> = [];
-  public activeIds: Array<string> = [];
+  @Input() public calcModels: Array<CalculationResult> = [];
+  @Input() public marchSize: number;
+  public active = 0;
   constructor() { }
 
   ngOnInit(): void {
-    this.calculateActive();
-  }
-
-  private calculateActive() {
-    for (let i = 0; i < this.army.Tiers.length; i++) {
-      let t = this.army.Tiers[i];
-      if (t.Infantry > 0 || t.Rider > 0 || t.Hunter > 0) {
-        this.activeIds.push(t.Level.toString());
-      }
-    }
+    //console.log(this.calcModels);
   }
 }

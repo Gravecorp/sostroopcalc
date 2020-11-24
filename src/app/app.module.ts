@@ -17,6 +17,7 @@ import { CapitalComponent } from './capital/capital.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { GenericCalcComponent } from './generic-calc/generic-calc.component';
+import { GenericViewComponent } from './generic-view/generic-view.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { GenericCalcComponent } from './generic-calc/generic-calc.component';
     HeaderComponent,
     ExtraComponent,
     CapitalComponent,
-    GenericCalcComponent
+    GenericCalcComponent,
+    GenericViewComponent
   ],
   imports: [
     BrowserModule,

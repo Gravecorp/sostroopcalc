@@ -15,40 +15,19 @@ export class CapitalComponent implements OnInit {
 
   constructor(private armyService: ArmyService, private calculationService: CalculationService,
     private extraService: ExtraService) { }
+    public calcModels: Array<CalculationResult> = [];
 
-    public army: ArmyModel = { Tiers: [], MassiveMarch: false };
-    public showWarning = false;
-    public warningInfo:Array<string> = [];
-
-  ngOnInit(): void {
-    this.calculate();
-  }
-
-  public calculate() {
-    let calcModel: CalculationModel = this.extraService.getCapitalRatios();
-    let marchSize: number = this.armyService.LoadMarch();
-    let result: CalculationResult = this.calculationService.calculate(calcModel, marchSize);
-    this.army = result.army;
-    let totalModel: CalculationModel = this.armyService.total(this.army);
-    let total: number = totalModel.Hunter + totalModel.Infantry + totalModel.Rider;
-    if(this.army.MassiveMarch) {
-      marchSize = Math.floor(marchSize * 1.10)
+    public marchSize: number;
+  
+    ngOnInit(): void {
+      this.calculate();
     }
-    if(result.totals.Infantry > totalModel.Infantry)
-    {
-      this.warningInfo.push(`Missing ${result.totals.Infantry - totalModel.Infantry} Infantry`);
-    }
-    if(result.totals.Rider > totalModel.Rider)
-    {
-      this.warningInfo.push(`Missing ${result.totals.Rider - totalModel.Rider} Riders`);
-    }
-    if(result.totals.Hunter > totalModel.Hunter)
-    {
-      this.warningInfo.push(`Missing ${result.totals.Hunter - totalModel.Hunter} Hunters`);
-    }
-    if (total < marchSize) {
-      this.showWarning = true;
-      this.warningInfo.push(`Formation: ${total}/${marchSize}`);
+  
+    public calculate() {
+      let calcModel: CalculationModel = this.extraService.getCapitalRatios();
+      this.marchSize = this.armyService.LoadMarch();
+      let army: ArmyModel = this.armyService.LoadArmy();
+      this.calcModels = this.calculationService.calc2(calcModel, this.marchSize);
     }
   }
-}
+  

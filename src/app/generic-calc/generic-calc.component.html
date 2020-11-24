@@ -1,33 +1,18 @@
-<div class="alert alert-danger" role="alert" *ngIf="showWarning">
-    You do not have enough troops to fill the formation!
-    <span *ngFor="let w of warningInfo;">
-        <br />{{w}}
-    </span>
+<div *ngIf="calcModels.length > 1">
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+        <li *ngFor="let model of calcModels; let j = index" [ngbNavItem]="j">
+            <a ngbNavLink *ngIf="calcModels.length > 1">
+                March {{ j + 1 }}
+            </a>
+            <ng-template ngbNavContent>
+                <app-generic-view [model]="model" [marchSize]="marchSize" [prefix]="j">
+                </app-generic-view>
+            </ng-template>
+        </li>
+    </ul>
+
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
 </div>
-<ngb-accordion [closeOthers]="false" [activeIds]="activeIds">
-      <ngb-panel  *ngFor="let t of army.Tiers; let i = index" id="{{t.Level}}">
-        <ng-template ngbPanelTitle>
-          <span>Tier: {{t.Level}}</span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-            <div class="form-row">
-                <label for="Infantry{{i}}" class="control-label col-sm-2">Infantry</label>
-                <div class = "col-sm-6">
-                    <p class = "form-control-static">{{t.Infantry}}</p>
-                 </div>
-            </div>
-            <div class="form-row">
-                <label for="Riders{{i}}" class="control-label col-sm-2">Riders</label>
-                <div class = "col-sm-6">
-                    <p class = "form-control-static">{{t.Rider}}</p>
-                 </div>
-            </div>
-            <div class="form-row">
-                <label for="Hunters{{i}}" class="control-label col-sm-2">Hunters</label>
-                <div class = "col-sm-6">
-                    <p class = "form-control-static">{{t.Hunter}}</p>
-                 </div>
-            </div>
-        </ng-template>
-      </ngb-panel>
-  </ngb-accordion>
+<div *ngIf="calcModels.length == 1">
+    <app-generic-view [model]="calcModels[0]" [marchSize]="marchSize" [prefix]="1"></app-generic-view>
+</div>
